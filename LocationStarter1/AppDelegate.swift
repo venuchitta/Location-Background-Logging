@@ -12,11 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var timer : NSTimer?
+    var locationTracker : LocationTracker?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //trace("In AppDelegate")
+        self.locationTracker = LocationTracker()
+        self.locationTracker?.startLocationTracking()
+       var time : NSTimeInterval = 60.0
+        let updateStatus : Selector = "updateStatus"
+          timer  = NSTimer.scheduledTimerWithTimeInterval(time, target: self, selector: updateStatus, userInfo: nil, repeats: true)
         return true
+    }
+    
+    func updateStatus(){
+        trace("The time remaining is \(UIApplication.sharedApplication().backgroundTimeRemaining)")
     }
 
     func applicationWillResignActive(application: UIApplication) {

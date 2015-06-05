@@ -13,6 +13,10 @@
 		8A1818ED1B212B5C00870241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A1818EC1B212B5C00870241 /* Images.xcassets */; };
 		8A1818F01B212B5C00870241 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1818EE1B212B5C00870241 /* LaunchScreen.xib */; };
 		8A1818FC1B212B5C00870241 /* LocationStarter1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1818FB1B212B5C00870241 /* LocationStarter1Tests.swift */; };
+		8A1819061B212C1A00870241 /* LocationShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1819051B212C1A00870241 /* LocationShareModel.swift */; };
+		8A1819081B212C4B00870241 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1819071B212C4B00870241 /* BackgroundTaskManager.swift */; };
+		8A18190A1B2130B000870241 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1819091B2130B000870241 /* LocationTracker.swift */; };
+		8A18190C1B214C1000870241 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A18190B1B214C1000870241 /* FileLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		8A1818F51B212B5C00870241 /* LocationStarter1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationStarter1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1818FA1B212B5C00870241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A1818FB1B212B5C00870241 /* LocationStarter1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStarter1Tests.swift; sourceTree = "<group>"; };
+		8A1819051B212C1A00870241 /* LocationShareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationShareModel.swift; sourceTree = "<group>"; };
+		8A1819071B212C4B00870241 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
+		8A1819091B2130B000870241 /* LocationTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTracker.swift; sourceTree = "<group>"; };
+		8A18190B1B214C1000870241 /* FileLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,9 @@
 		8A1818D71B212B5C00870241 = {
 			isa = PBXGroup;
 			children = (
+				8A18190B1B214C1000870241 /* FileLogger.swift */,
+				8A1819091B2130B000870241 /* LocationTracker.swift */,
+				8A1819071B212C4B00870241 /* BackgroundTaskManager.swift */,
 				8A1818E21B212B5C00870241 /* LocationStarter1 */,
 				8A1818F81B212B5C00870241 /* LocationStarter1Tests */,
 				8A1818E11B212B5C00870241 /* Products */,
@@ -79,6 +90,7 @@
 			children = (
 				8A1818E51B212B5C00870241 /* AppDelegate.swift */,
 				8A1818E71B212B5C00870241 /* ViewController.swift */,
+				8A1819051B212C1A00870241 /* LocationShareModel.swift */,
 				8A1818E91B212B5C00870241 /* Main.storyboard */,
 				8A1818EC1B212B5C00870241 /* Images.xcassets */,
 				8A1818EE1B212B5C00870241 /* LaunchScreen.xib */,
@@ -161,6 +173,11 @@
 				TargetAttributes = {
 					8A1818DF1B212B5C00870241 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					8A1818F41B212B5C00870241 = {
 						CreatedOnToolsVersion = 6.4;
@@ -212,8 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A1819081B212C4B00870241 /* BackgroundTaskManager.swift in Sources */,
 				8A1818E81B212B5C00870241 /* ViewController.swift in Sources */,
 				8A1818E61B212B5C00870241 /* AppDelegate.swift in Sources */,
+				8A18190C1B214C1000870241 /* FileLogger.swift in Sources */,
+				8A1819061B212C1A00870241 /* LocationShareModel.swift in Sources */,
+				8A18190A1B2130B000870241 /* LocationTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationStarter1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationStarter1/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
